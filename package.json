@@ -7,9 +7,18 @@
     "bootstrap": "^3.3.7",
     "font-awesome": "^4.7.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "mkdirp": "^0.5.1",
+    "node-sass": "^4.5.3"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prestart": "echo PRESTART",
+    "start": "echo começou o start",
+    "poststart": "echo POSTSTART",
+    "preinstall": "mkdirp src/components/bootstrap/ src/components/font-awesome/",
+    "postinstall": "cp -r node_modules/bootstrap/dist src/components/bootstrap/ && cp -r node_modules/font-awesome/css src/components/font-awesome/ && cp -r node_modules/font-awesome/fonts src/components/font-awesome/",
+    "sass": "node-sass"
   },
   "author": "Bruno Pereira do Nascimento",
   "license": "ISC"
