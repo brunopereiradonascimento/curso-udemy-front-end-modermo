@@ -1,0 +1,98 @@
+//nesting - aninhamento
+.header {
+    background: red;
+
+    nav {
+        ul {
+            li {
+                a {
+                    color: green;
+                }
+            }
+        }
+    }
+}
+
+nav a {
+    background: black;
+
+    &:hover{
+        color: blue;
+    }
+}
+
+
+//mixin
+@mixin borda-redonda{
+    border-radius: 10px;
+}
+
+.div1 {
+    @include borda-redonda;
+}
+
+//mixin com parâmetro
+@mixin borda-redonda-padrao($pixels:5px){
+    border-radius: $pixels;
+}
+
+.div2 {
+    @include borda-redonda-padrao(30px);
+}
+
+
+//extend
+.botao {
+    padding: 15px;
+}
+
+.botao-primary {
+    @extend .botao;
+    background: blue;
+}
+
+.botao-danger{
+    @extend .botao;
+    background: orange;
+}
+
+
+//function - sem parâmetro
+@function escurecer(){
+    @return #000;
+}
+
+.botao-black {
+    color: escurecer();
+}
+
+//function com parâmetro
+@function dark($cor, $porc:15%){
+    @return darken($cor, $porc);
+}
+
+.botao-info{
+    $back: #fff;
+    @extend .botao;
+    background: $back;
+
+    &:hover{
+        background: dark($back, 5%);
+    }
+}
+
+//uso do &
+.botao-topo {
+    background: yellow;
+    &:hover {
+        background: orange;
+    }
+}
+
+.menu {
+    padding-top: 10px;
+
+    &-rodape{
+        padding-top: 30px;
+    }
+}
