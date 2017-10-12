@@ -1,0 +1,17 @@
+//Instalação - Globalmente
+npm install gulp-cli -g ou npm install -g gulp
+
+//Instalação local
+npm install gulp --save-dev ou npm i gulp -D
+
+//Criação do arquivo de configuração
+touch gulpfile.js
+
+//Desintalando o node-sass, não é mais necessário
+npm uninstall node-sass --save-dev
+
+//Instalando o gulp-sass
+npm i gulp-sass -D
+
+//Rodando o gulp - sass
+npm run gulp sass
