@@ -15,3 +15,9 @@ npm i gulp-sass -D
 
 //Rodando o gulp - sass
 npm run gulp sass
+
+//Browser Sync - instalação
+npm i browser-sync -D
+
+//Browser Sync - executar
+npm run gulp servidor

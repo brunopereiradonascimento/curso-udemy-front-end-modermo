@@ -17,6 +17,7 @@
         font-weight: 300;
     }
     &__ilustra {
+        overflow: hidden;
         background-image: url('../imagens/cenario_all_960.png');
         background-size: auto 100%;
         background-position: center top;
