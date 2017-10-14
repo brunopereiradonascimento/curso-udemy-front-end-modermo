@@ -1,2 +1,32 @@
 //Instalação global do Yarn
 npm install -g yarn
+
+//Comparação NPM
+npm install
+yarn install
+
+npm install --save [package]
+yarn add [package]
+
+npm install --save-dev [package]
+yarn add [package] [--dev/-D]
+
+npm install --global [package]
+yarn global add [package]
+
+npm update --global
+yarn global upgrade
+
+npm uninstall --save [package]
+yarn remove [package]
+
+npm uninstall --save-dev [package]
+yarn remove [package]
+
+npm cache clean
+yarn cache clean [package]
+
+rm -rf node_modules && npm install
+yarn upgrade
+
+https://yarnpkg.com/lang/pt-br/docs/migrating-from-npm/

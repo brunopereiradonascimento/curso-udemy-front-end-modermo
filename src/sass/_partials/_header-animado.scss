@@ -1,5 +1,100 @@
 .header-animado {
     $h: 300px;
-    height: $h;
+    $largura_cenario: 2400px;
     background-color: $main-color;
+    padding-top: 96px;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    .header-animado__title {
+        color: #1B1B19;
+        font-size: 38px;
+        font-weight: bold;
+    }
+    .header-animado__subtitle {
+        color: #AF9;
+        font-size: 34px;
+        line-height: 1.5;
+        font-weight: 300;
+    }
+    &__ilustra {
+        background-image: url('../imagens/cenario_all_960.png');
+        background-size: auto 100%;
+        background-position: center top;
+        height: $h/2;
+        &>div {
+            display: none;
+        }
+        
+        @mixin anima($imagem, $animacao: '30s linear infinite reverse'){
+                background-image: url('../imagens/#{$imagem}');
+                animation: anima_cenario #{$animacao};
+            }
+            
+            @keyframes anima_cenario{
+                from{
+                    transform: translateX(-50%) translateZ(0);
+                }
+                to{
+                    transform: translateX(0) translateZ(0);
+                }
+            }        
+        
+        @media screen and (min-width: 480px) {
+            background-image: url('../imagens/cenario_all_1530.png');
+        }
+        @media screen and (min-width: 960px) {
+            background-image: url('../imagens/cenario_bg.png');
+            height: $h;
+            position: relative;
+            &>div {
+                display: block;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: $largura_cenario * 2;
+            }
+            
+            $itens: (
+                nuvens: '90s linear infinite reverse',
+                casas: null,
+                rua: null,
+                carrosCima: '15s linear infinite reverse',
+                carrosBaixo: '10s linear infinite'
+            );
+                
+            @each $chave, $valor in $itens{
+                
+                @if $valor{
+                    .#{$chave} {
+                        @include anima('cenario_#{$chave}.png', $valor);  
+                    }
+                } @else {
+                    .#{$chave} {
+                        @include anima('cenario_#{$chave}.png'); 
+                    }
+                }
+            }
+            
+            
+            /*
+            .nuvens {
+                @include anima('cenario_nuvens.png','90s linear infinite reverse');
+            }
+            .casas {
+                @include anima('cenario_casas.png');
+            }
+             .rua {
+                @include anima('cenario_rua.png');
+            }
+             .carrosCima {
+                @include anima('cenario_carrosCima.png','15s linear infinite reverse');
+            }
+            .carrosBaixo {
+                @include anima('cenario_carrosBaixo.png','10s linear infinite');
+            }
+            */
+        
+        }
+    }
 }
