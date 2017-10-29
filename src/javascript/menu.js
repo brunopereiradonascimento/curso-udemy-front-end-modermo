@@ -26,7 +26,6 @@
         menuOpened = false;
         html.classList.remove('menu-opened'); 
         btn.blur();
-        
         menu.setAttribute('aria-expanded', false);
         btn.setAttribute('aria-expanded', false);        
     }

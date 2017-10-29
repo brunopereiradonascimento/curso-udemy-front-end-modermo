@@ -3,18 +3,21 @@
     $largura_cenario: 2400px;
     background-color: $main-color;
     padding-top: 96px;
-    margin-bottom: 0;
+    margin-bottom: 32px;
     padding-bottom: 0;
     .header-animado__title {
+        font-family: 'Open Sans', 'Tahoma', Arial, sans-serif;        
         color: #1B1B19;
         font-size: 38px;
         font-weight: bold;
     }
     .header-animado__subtitle {
+        font-family: 'Open Sans', 'Tahoma', Arial, sans-serif;        
         color: #AF9;
         font-size: 34px;
         line-height: 1.5;
         font-weight: 300;
+        margin-bottom: 2em;
     }
     &__ilustra {
         overflow: hidden;
@@ -25,21 +28,19 @@
         &>div {
             display: none;
         }
-        
-        @mixin anima($imagem, $animacao: '30s linear infinite reverse'){
-                background-image: url('../imagens/#{$imagem}');
-                animation: anima_cenario #{$animacao};
+        @mixin anima($imagem,
+        $animacao: '30s linear infinite reverse') {
+            background-image: url('../imagens/#{$imagem}');
+            animation: anima_cenario #{$animacao};
+        }
+        @keyframes anima_cenario {
+            from {
+                transform: translateX(-50%) translateZ(0);
             }
-            
-            @keyframes anima_cenario{
-                from{
-                    transform: translateX(-50%) translateZ(0);
-                }
-                to{
-                    transform: translateX(0) translateZ(0);
-                }
-            }        
-        
+            to {
+                transform: translateX(0) translateZ(0);
+            }
+        }
         @media screen and (min-width: 480px) {
             background-image: url('../imagens/cenario_all_1530.png');
         }
@@ -55,29 +56,25 @@
                 left: 0;
                 width: $largura_cenario * 2;
             }
-            
-            $itens: (
-                nuvens: '90s linear infinite reverse',
-                casas: null,
-                rua: null,
-                carrosCima: '15s linear infinite reverse',
-                carrosBaixo: '10s linear infinite'
-            );
-                
-            @each $chave, $valor in $itens{
-                
-                @if $valor{
+            $itens: ( nuvens: '90s linear infinite reverse',
+            casas: null,
+            rua: null,
+            carrosCima: '15s linear infinite reverse',
+            carrosBaixo: '10s linear infinite');
+            @each $chave,
+            $valor in $itens {
+                @if $valor {
                     .#{$chave} {
-                        @include anima('cenario_#{$chave}.png', $valor);  
+                        @include anima('cenario_#{$chave}.png',
+                        $valor);
                     }
-                } @else {
+                }
+                @else {
                     .#{$chave} {
-                        @include anima('cenario_#{$chave}.png'); 
+                        @include anima('cenario_#{$chave}.png');
                     }
                 }
             }
-            
-            
             /*
             .nuvens {
                 @include anima('cenario_nuvens.png','90s linear infinite reverse');
@@ -95,7 +92,6 @@
                 @include anima('cenario_carrosBaixo.png','10s linear infinite');
             }
             */
-        
         }
     }
 }

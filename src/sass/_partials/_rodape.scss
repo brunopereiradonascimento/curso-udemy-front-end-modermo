@@ -1,5 +1,22 @@
 .rodape{
     background: lighten($main-color, 15);
+    color: darken($main-color, 20);
+    padding: 1em 0;
+    
+    svg{
+        width: 22px;
+        height: 22px;
+    }
+    
+    .color-icon{
+        fill: darken($main-color, 20);
+        transition: fill .5s;
+        
+        &:hover{
+            fill: darken($main-color, 30);
+        }
+    }
+    
     ul{
         overflow: auto;
         padding: 0;
@@ -15,7 +32,7 @@
         
         li a{
             font-size: 1.5em;
-            color: white;
+            color: inherit;
             display: block;
             text-align: right;
         }

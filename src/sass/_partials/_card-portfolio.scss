@@ -37,7 +37,8 @@
         img{
             max-width: 100%;
             opacity:  .5;
-            transition: opacity .3s linear, transform .3s ease-in;
+            transition: opacity .3s linear, transform .3s ease-in, filter .5s linear;
+            filter: grayscale(1);
         }
     }
     
@@ -45,6 +46,7 @@
         img{
             opacity: 1;
             transform: scale(1.1) rotate(-3deg);
+            filter: grayscale(0);
         }
         
         .card-portfolio__btn{
