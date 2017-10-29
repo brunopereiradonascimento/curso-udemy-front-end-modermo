@@ -31,12 +31,6 @@ gulp.task('sass', function() {
         .pipe(gulp.dest('./dist/css/'));
 })
 
-/*
-gulp.task('monitorarsass', function() {
-   gulp.watch('./src/sass/**\/*.scss', ['sass'])
-})
-*/
-
 gulp.task('html', function(){
     return gulp.src(['./src/**/*.html', '!src/inc/**'])
         .pipe(include())
