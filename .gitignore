@@ -1,6 +1,8 @@
 node_modules/
 components/
-comandos git.txt
-comandos npm.txt
-comandos terminal linux iunix.txt
-sass.txt
+*.txt
+#comandos git.txt
+#comandos npm.txt
+#comandos terminal linux iunix.txt
+#sass.txt
+#gulp.txt
