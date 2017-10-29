@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br" class="no-js">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Udemy - Front-end moderno
+    </title>
+    <link rel="stylesheet" href="components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+    
+    @@include('./inc/nav.html')
+    
+    <div class="jumbotron header-animado text-center">
+        <div class="container">
+            <p class="header-animado__title">O que ando fazendo</p>
+            <h1 class="header-animado__subtitle">Veja alguns dos meus trabalhos</h1>
+        </div>
+    </div>
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <h2>Últimos Trabalhos</h2>
+            </div>
+
+            @@loop('./inc/card-portfolio.html', [
+                {
+                    "titulo": "Título 1",
+                    "imagem": "imagens/portfolio/01.jpg",
+                    "alt": "Portfolio1",
+                    "texto": "Texto1",
+                    "link": "#"
+                },
+                {
+                    "titulo": "Título 2",
+                    "imagem": "imagens/portfolio/02.jpg",
+                    "alt": "Portfolio2",
+                    "texto": "Texto2",
+                    "link": "#"
+                },
+                {
+                    "titulo": "Título 3",
+                    "imagem": "imagens/portfolio/03.jpg",
+                    "alt": "Portfolio3",
+                    "texto": "Texto3",
+                    "link": "#"
+                },
+                {
+                    "titulo": "Título 4",
+                    "imagem": "imagens/portfolio/04.jpg",
+                    "alt": "Portfolio4",
+                    "texto": "Texto4",
+                    "link": "#"
+                },
+                {
+                    "titulo": "Título 5",
+                    "imagem": "imagens/portfolio/05.jpg",
+                    "alt": "Portfolio5",
+                    "texto": "Texto5",
+                    "link": "#"
+                },
+                {
+                    "titulo": "Título 6",
+                    "imagem": "imagens/portfolio/06.jpg",
+                    "alt": "Portfolio6",
+                    "texto": "Texto6",
+                    "link": "#"
+                }
+            ])        
+
+        </div>
+        <hr>
+    </div>
+    
+    @@include('./inc/footer.html')
+    
+    <script src="javascript/main.js"></script>
+    <script src="javascript/menu.js"></script>    
+</body>
+
+</html>

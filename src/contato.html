@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br" class="no-js">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Udemy - Front-end moderno
+    </title>
+    <link rel="stylesheet" href="components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/contato.css">
+</head>
+
+<body>
+
+    @@include('./inc/nav.html')
+
+    <div class="jumbotron header-animado text-center">
+        <div class="container">
+            <p class="header-animado__title">Vamos bater um papo</p>
+            <p class="header-animado__subtitle">Entre em contato comigo!</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-lg-8 col-lg-offset-2">
+                <form action="" id="contactForm">
+                    <div class="form-group">
+                        <label for="txtNome">Email address</label>
+                        <input type="text" class="form-control" id="txtNome" placeholder="Nome">
+                    </div>
+                    <div class="form-group">
+                        <label for="textEmail">E-mail</label>
+                        <input type="email" class="form-control" id="textEmail" placeholder="E-mail">
+                    </div>
+                    <div class="form-group">
+                        <label for="textMensagem">Mensagem</label>
+                        <textarea name="" class="form-control" id="textMensagem"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-success btn-lg">Enviar</button>
+                    </div>
+                </form>
+
+            </div>
+            <hr>
+        </div>
+    </div>
+
+    @@include('./inc/footer.html')
+
+    <script src="javascript/main.js"></script>
+    <script src="javascript/menu.js"></script>
+</body>
+
+</html>
